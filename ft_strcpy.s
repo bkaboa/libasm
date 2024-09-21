@@ -1,5 +1,6 @@
 bits 64
 
+section .data
 NULL: equ 0
 
 section .text
@@ -11,18 +12,18 @@ ft_strcpy:
 ;rsi == src
   xor rax, rax
   cmp rdi, NULL
-  jz end
+    jz end
+
   cmp rsi, NULL
-  jz end
+    jz end
+
   mov rax, rdi
   mov rdx, rsi
 
   loop:
     mov cl, [rsi]
     mov [rdi], cl
-    cmp rax, rdx
-      je end
-    cmp rcx, 0
+    cmp cl, 0
       jz end
     inc rsi
     inc rdi

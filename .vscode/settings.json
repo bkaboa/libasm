@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "code": "c",
+        "ctype.h": "c",
+        "stdint.h": "c",
+        "errno.h": "c",
+        "errno-base.h": "c",
+        "features.h": "c",
+        "fcntl.h": "c"
+    }
+}

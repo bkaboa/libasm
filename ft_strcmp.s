@@ -11,23 +11,23 @@ global ft_strcmp
 
 ft_strcmp:
   xor rax, rax
-  xor rbx, rbx
+  xor rcx, rcx
   cmp rdi, NULL
-    jz end
+    je end
   cmp rsi, NULL
-    jz end
+    je end
 
   loop:
+    mov cl, byte [rsi]
     mov al, byte [rdi]
-    cmp al, byte [rsi]
+    cmp al, cl
       jne end
-    mov bl, byte [rsi]
-    cmp bl, 0
+    cmp cl, 0
       je end
     inc rdi
     inc rsi
     jmp loop
 
   end:
-    sub rax, rbx
+    sub rax, rcx
     ret

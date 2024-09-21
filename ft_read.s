@@ -1,12 +1,12 @@
 bits 64
 
-extern __errno_location
-global ft_write
 
 section .text
+extern __errno_location
+global ft_read
 
-ft_write:
-  mov rax, 1
+ft_read:
+  mov rax, 0
   syscall
   cmp rax, 0
     js error_in_t
@@ -15,7 +15,7 @@ ft_write:
   error_in_t:
     mov rdx, rax
     call __errno_location wrt ..plt
-    neg rdx
+    neg edx
     mov dword [rax], edx
     mov rax, -1
     ret
